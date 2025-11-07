@@ -5,33 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OriginForge Analytics</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;margin:0;background:#0f172a;color:#e2e8f0}
-    .wrap{max-width:860px;margin:0 auto;padding:56px 20px}
-    h1{font-size:2.2rem;margin:0 0 8px}
-    p{line-height:1.6}
-    .card{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:20px;margin-top:24px}
-    a{color:#93c5fd;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .btn{display:inline-block;margin-top:16px;padding:10px 14px;border-radius:10px;background:#1d4ed8;color:#fff}
+    :root {
+      --bg: #0f172a;
+      --fg: #e2e8f0;
+      --accent: #3b82f6;
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin: 0;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    section {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 28px;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      opacity: 0.7;
+      border-top: 1px solid #1f2937;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <header>
     <h1>OriginForge Analytics</h1>
-    <p>Forging clarity from complexity — data automation, Power Platform solutions, and analytics workflows.</p>
+    <p class="subtitle">Forging clarity from complexity — data, automation, and analytics solutions.</p>
+  </header>
 
-    <div class="card">
-      <h2>What I Do</h2>
+  <main>
+    <section>
+      <h2>What We Do</h2>
       <ul>
-        <li>Build internal apps with Power Apps + Dataverse</li>
-        <li>Automate workflows with Power Automate</li>
-        <li>Design Power BI dashboards and reports</li>
+        <li>Design and deploy Power Apps for streamlined internal workflows</li>
+        <li>Automate business processes with Power Automate</li>
+        <li>Build Power BI dashboards and data models for decision-making</li>
+        <li>Integrate SharePoint and Teams data for unified insights</li>
       </ul>
-      <a class="btn" href="mailto:hello@originforge.org">Contact</a>
-    </div>
+    </section>
 
-    <p style="margin-top:32px">© <span id="y"></span> OriginForge</p>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    <section>
+      <h2>Our Approach</h2>
+      <p>We start small and scale fast — helping teams prototype, test, and deploy practical solutions using Microsoft's Power Platform and modern cloud tools. Our focus is clarity, reliability, and measurable value.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Have a project or need help with automation?</p>
+      <a class="btn" href="mailto:hello@originforge.org">Get in Touch</a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> OriginForge Analytics
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
 </html>
