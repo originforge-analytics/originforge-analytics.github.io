@@ -3,105 +3,192 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OriginForge Analytics</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --fg: #e2e8f0;
-      --accent: #3b82f6;
-    }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
-    }
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 8px;
-    }
-    p.subtitle {
-      font-size: 1.2rem;
-      opacity: 0.8;
-      margin: 0;
-    }
-    main {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 20px 60px;
-    }
-    section {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 28px;
-    }
-    h2 {
-      color: var(--accent);
-      margin-top: 0;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #fff;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      opacity: 0.7;
-      border-top: 1px solid #1f2937;
-    }
-  </style>
+  <title>Origin Forge</title>
+  <meta
+    name="description"
+    content="Origin Forge helps teams build practical analytics, automation, and reporting solutions with Power BI, Power Apps, Power Automate, and modern data workflows."
+  />
+  <link rel="stylesheet" href="./css/index.css" />
 </head>
 <body>
-  <header>
-    <h1>OriginForge Analytics</h1>
-    <p class="subtitle">Forging clarity from complexity — data, automation, and analytics solutions.</p>
+  <header class="site-header">
+    <nav class="topbar">
+      <div class="brand-mini">
+        <img src="./images/BlueHammerAloneTransparent4000X.png" alt="Origin Forge symbol" class="brand-mini-logo" />
+        <span>Origin Forge</span>
+      </div>
+      <div class="topbar-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Analytics • Automation • Business Intelligence</p>
+        <h1>Build smarter systems from your data.</h1>
+        <p class="hero-text">
+          Origin Forge helps organizations turn messy workflows, disconnected
+          reporting, and manual processes into clear dashboards, useful
+          automation, and scalable decision tools.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:hello@originforge.org">Get in Touch</a>
+          <a class="btn btn-secondary" href="#portfolio">View Portfolio</a>
+        </div>
+      </div>
+
+      <div class="hero-brand">
+        <img
+          src="./images/BlueHammerWithWordsTransparent4000X.png"
+          alt="Origin Forge logo"
+          class="hero-logo"
+        />
+      </div>
+    </section>
   </header>
 
   <main>
-    <section>
-      <h2>What We Do</h2>
-      <ul>
-        <li>Design and deploy Power Apps for streamlined internal workflows</li>
-        <li>Automate business processes with Power Automate</li>
-        <li>Build Power BI dashboards and data models for decision-making</li>
-        <li>Integrate SharePoint and Teams data for unified insights</li>
-      </ul>
+    <section id="services" class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Services</p>
+        <h2>What We Do</h2>
+      </div>
+
+      <div class="card-grid services-grid">
+        <article class="info-card">
+          <h3>Power BI Dashboards</h3>
+          <p>
+            Build reports and dashboard experiences that help teams understand
+            performance, monitor operations, and make better decisions.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Automation Workflows</h3>
+          <p>
+            Reduce repetitive work with Power Automate and connected business
+            processes that move faster and break less often.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Power Apps Solutions</h3>
+          <p>
+            Create lightweight internal tools for data entry, approvals,
+            tracking, and process management without overbuilding.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Data Integration</h3>
+          <p>
+            Bring together SharePoint, Teams, Excel, SQL, and other business
+            sources into one usable reporting and workflow layer.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Our Approach</h2>
-      <p>We start small and scale fast — helping teams prototype, test, and deploy practical solutions using Microsoft's Power Platform and modern cloud tools. Our focus is clarity, reliability, and measurable value.</p>
+    <section id="portfolio" class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Portfolio</p>
+        <h2>Selected Work / Project Area</h2>
+        <p class="section-intro">
+          This section gives you a place to feature projects, case studies, or
+          writeups. For now these can be simple placeholder cards, and later
+          each one can link to its own page.
+        </p>
+      </div>
+
+      <div class="card-grid portfolio-grid">
+        <article class="portfolio-card">
+          <div class="portfolio-icon-wrap">
+            <img src=".images/BlueHammerAloneTransparent4000X.png" alt="" class="portfolio-icon" />
+          </div>
+          <h3>Operations Dashboard Modernization</h3>
+          <p>
+            Example project summary goes here. Replace this with a short client
+            problem, what you built, and what changed as a result.
+          </p>
+          <a href="#" class="text-link">Read case study</a>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-icon-wrap">
+            <img src="./images/BlueHammerAloneTransparent4000X.png" alt="" class="portfolio-icon" />
+          </div>
+          <h3>Approval Workflow Automation</h3>
+          <p>
+            Use this card for internal workflow redesign, approval routing,
+            process automation, or document handling examples.
+          </p>
+          <a href="#" class="text-link">Read case study</a>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-icon-wrap">
+            <img src="./images/BlueHammerAloneTransparent4000X.png" alt="" class="portfolio-icon" />
+          </div>
+          <h3>Reporting Stack Cleanup</h3>
+          <p>
+            Add a project here about consolidating Excel reporting, cleaning up
+            Power BI models, or creating reusable business reporting.
+          </p>
+          <a href="#" class="text-link">Read case study</a>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Have a project or need help with automation?</p>
-      <a class="btn" href="mailto:hello@originforge.org">Get in Touch</a>
+    <section class="panel split-panel">
+      <div class="split-copy">
+        <p class="section-kicker">Approach</p>
+        <h2>Practical solutions first.</h2>
+        <p>
+          We focus on useful systems, not bloated ones. The goal is to help
+          clients move from manual work and scattered reporting to something
+          clear, maintainable, and valuable.
+        </p>
+        <p>
+          Start with a targeted solution. Prove value quickly. Then expand where
+          it makes sense.
+        </p>
+      </div>
+
+      <div class="split-art">
+        <img
+          src="./images/BlueHammerAloneTransparent4000X.png"
+          alt="Origin Forge symbol"
+          class="symbol-large"
+        />
+      </div>
+    </section>
+
+    <section id="contact" class="panel contact-panel">
+      <div class="section-heading">
+        <p class="section-kicker">Contact</p>
+        <h2>Let’s talk about your workflow or reporting problem.</h2>
+        <p class="section-intro">
+          Need help with dashboards, automation, data cleanup, or internal
+          tooling? Reach out and we can start with a focused conversation.
+        </p>
+      </div>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:hello@originforge.org">hello@originforge.org</a>
+        <a class="btn btn-secondary" href="#portfolio">See project examples</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> OriginForge Analytics
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Origin Forge. Built for analytics, automation, and practical business systems.</p>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

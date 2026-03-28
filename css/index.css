@@ -1,0 +1,356 @@
+:root {
+  --bg: #0b1220;
+  --bg-soft: #111a2e;
+  --panel: #101827;
+  --panel-2: #0f172a;
+  --text: #e5edf8;
+  --muted: #94a3b8;
+  --line: rgba(148, 163, 184, 0.16);
+  --blue: #2f6df6;
+  --blue-2: #4d83ff;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --radius: 18px;
+  --max: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(47, 109, 246, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(77, 131, 255, 0.08), transparent 20%),
+    linear-gradient(180deg, #0a1120 0%, #0b1220 50%, #0a1020 100%);
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  padding: 20px 20px 50px;
+}
+
+.topbar {
+  max-width: var(--max);
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand-mini-logo {
+  width: 38px;
+  height: auto;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 22px;
+}
+
+.topbar-links a {
+  color: var(--muted);
+  font-size: 0.96rem;
+  transition: color 0.2s ease;
+}
+
+.topbar-links a:hover {
+  color: var(--text);
+}
+
+.hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 72vh;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--blue-2);
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  max-width: 11ch;
+}
+
+.hero-text {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  width: min(100%, 560px);
+  filter: drop-shadow(0 18px 38px rgba(0, 0, 0, 0.35));
+}
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(16, 24, 39, 0.96), rgba(14, 22, 36, 0.98));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px;
+  margin-top: 26px;
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.section-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--blue-2);
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.section-intro {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.services-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card,
+.portfolio-card {
+  background: linear-gradient(180deg, rgba(18, 28, 45, 0.92), rgba(14, 21, 35, 0.92));
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+  padding: 22px;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.info-card:hover,
+.portfolio-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(77, 131, 255, 0.35);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+}
+
+.info-card p,
+.portfolio-card p,
+.split-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.portfolio-icon-wrap {
+  margin-bottom: 14px;
+}
+
+.portfolio-icon {
+  width: 74px;
+  height: auto;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--blue-2);
+  font-weight: 600;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.split-panel {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.symbol-large {
+  width: min(100%, 420px);
+  margin-left: auto;
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.28));
+}
+
+.contact-panel {
+  text-align: left;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--blue-2), var(--blue));
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(47, 109, 246, 0.28);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.site-footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 20px 44px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .split-panel,
+  .portfolio-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    gap: 22px;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .hero-brand {
+    justify-content: flex-start;
+  }
+
+  .hero-logo {
+    width: min(100%, 480px);
+  }
+
+  .symbol-large {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar-links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .panel {
+    padding: 24px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-text,
+  .section-intro,
+  .info-card p,
+  .portfolio-card p,
+  .split-copy p {
+    font-size: 0.98rem;
+  }
+}
