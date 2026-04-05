@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olist E-Commerce Dashboard Case Study | Origin Forge</title>
+  <meta
+    name="description"
+    content="Case study for an e-commerce sales and customer insights dashboard built in Power BI using the Brazilian Olist dataset."
+  />
+  <link rel="stylesheet" href="../../css/index.css" />
+</head>
+<body>
+  <header class="site-header project-header">
+    <nav class="topbar">
+      <div class="brand-mini">
+        <img src="../../images/BlueHammerAloneTransparent4000X.png" alt="Origin Forge symbol" class="brand-mini-logo" />
+        <span>Origin Forge</span>
+      </div>
+      <div class="topbar-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#portfolio">Portfolio</a>
+        <a href="../../index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="project-hero panel">
+      <div class="project-hero-copy">
+        <p class="section-kicker">Portfolio Case Study</p>
+        <h1>E-Commerce Sales &amp; Customer Insights Dashboard</h1>
+        <p class="project-intro">
+          A Power BI dashboard project built using the Brazilian Olist dataset to
+          analyze revenue growth, delivery performance, customer satisfaction,
+          and customer purchasing behavior through an executive overview and
+          supporting detail pages.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../../index.html#contact">Discuss a Similar Project</a>
+          <a class="btn btn-secondary" href="../../index.html#portfolio">Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="project-main">
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Overview</p>
+        <h2>Project Summary</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          This project was designed to simulate a real client-facing dashboard
+          engagement. The goal was to build a business-ready reporting solution
+          that gives stakeholders a fast executive snapshot while also allowing
+          deeper exploration of the most important metrics.
+        </p>
+        <p>
+          The final deliverable includes a main dashboard page focused on revenue,
+          delivery, and customer experience, along with KPI-driven detail pages
+          that expand key trends such as average order value, review score, and
+          installment-based revenue patterns.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Business Problem</p>
+        <h2>What This Dashboard Was Built to Answer</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          E-commerce teams often have access to large amounts of transactional
+          data, but struggle to connect sales performance, operational reliability,
+          and customer satisfaction into one usable reporting layer.
+        </p>
+        <p>
+          This dashboard was built to answer a focused set of business questions:
+        </p>
+
+        <ul class="project-list">
+          <li>How is revenue trending over time?</li>
+          <li>What is happening with order volume and average order value?</li>
+          <li>How reliable is delivery performance?</li>
+          <li>Do late deliveries impact review scores?</li>
+          <li>Are customers primarily one-time buyers or repeat purchasers?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Approach</p>
+        <h2>How It Was Built</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          The project started with a structured intake workflow: identifying table
+          grain, key relationships, business questions, and priority metrics before
+          moving into dashboard design.
+        </p>
+
+        <div class="card-grid project-method-grid">
+          <article class="info-card">
+            <h3>Data Modeling</h3>
+            <p>
+              Built a clean Power BI model from relational Olist tables including
+              orders, order items, payments, reviews, and customers.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Metric Design</h3>
+            <p>
+              Created business-focused KPIs for revenue, order volume, average
+              order value, delivery timing, review score, and installment behavior.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Dashboard Structure</h3>
+            <p>
+              Designed an executive overview page with focused visuals and
+              KPI-triggered detail pages for deeper trend analysis.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Data Validation</h3>
+            <p>
+              Used Power BI table validation and a simple Python audit script to
+              check for null issues and duplicate rows during intake.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Main Dashboard</p>
+        <h2>Executive Overview</h2>
+        <p class="section-intro">
+          The main page provides a high-level performance view across revenue,
+          operations, and customer experience.
+        </p>
+      </div>
+
+      <figure class="project-figure project-figure-main">
+        <img
+          src="./images/main_page.png"
+          alt="Main Power BI dashboard page showing revenue trend, KPI summary, delivery status, review score impact, and customer order frequency"
+        />
+      </figure>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Detail Views</p>
+        <h2>Supporting Analysis Pages</h2>
+        <p class="section-intro">
+          KPI-linked detail pages were added to support deeper inspection of
+          trend behavior without overcrowding the main dashboard.
+        </p>
+      </div>
+
+      <div class="project-image-grid">
+        <figure class="project-figure">
+          <img
+            src="./images/avg_order_val.png"
+            alt="Average order value trend detail page"
+          />
+          <figcaption>Average order value trend detail page</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img
+            src="./images/avg_reviw_score.png"
+            alt="Average review score trend detail page"
+          />
+          <figcaption>Average review score trend detail page</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img
+            src="./images/revenue_by_installments.png"
+            alt="Revenue by installments detail page"
+          />
+          <figcaption>Revenue by installments detail page</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Key Insights</p>
+        <h2>What the Dashboard Revealed</h2>
+      </div>
+
+      <div class="project-copy">
+        <ul class="project-list">
+          <li>Revenue trends upward over time, indicating strong marketplace growth during the observed period.</li>
+          <li>Roughly 89% of orders are delivered on time, showing generally strong fulfillment performance.</li>
+          <li>Late deliveries are associated with noticeably lower review scores, linking operations directly to customer satisfaction.</li>
+          <li>The customer base is dominated by one-time purchasers, suggesting room for stronger retention strategy.</li>
+          <li>Installment usage is concentrated in lower counts, with a smaller concentration in mid-range financing behavior.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Tools Used</p>
+        <h2>Technology Stack</h2>
+      </div>
+
+      <div class="card-grid project-tools-grid">
+        <article class="info-card">
+          <h3>Power BI</h3>
+          <p>
+            Data modeling, DAX measures, visual design, interaction flow, and
+            detail-page navigation.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Power Query</h3>
+          <p>
+            Data typing, cleanup, and table preparation during initial intake.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Python</h3>
+          <p>
+            Basic dataset audit scripting for null and duplicate checks during
+            workflow development.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Outcome</p>
+        <h2>What This Project Demonstrates</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          This case study demonstrates the ability to take a multi-table business
+          dataset from intake and modeling through metric design, dashboard
+          structure, interaction design, and business interpretation.
+        </p>
+        <p>
+          It reflects the type of reporting work used in real consulting
+          engagements: practical, decision-oriented, and built to balance
+          executive simplicity with analytical depth.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="../../index.html#contact">Start a Conversation</a>
+        <a class="btn btn-secondary" href="../../index.html#portfolio">Back to Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Origin Forge. Built for analytics, automation, and practical business systems.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
