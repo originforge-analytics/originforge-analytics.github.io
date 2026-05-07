@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>NYC Taxi Demand & Efficiency Dashboard | Origin Forge</title>
+
+  <meta
+    name="description"
+    content="Power BI analytics case study focused on NYC taxi demand, geographic activity, revenue efficiency, and operational performance."
+  />
+
+  <link rel="stylesheet" href="../../css/index.css" />
+</head>
+
+<body>
+  <header class="site-header project-header">
+    <nav class="topbar">
+      <div class="brand-mini">
+        <img src="../../images/BlueHammerAloneTransparent4000X.png" class="brand-mini-logo" alt="Origin Forge symbol" />
+        <span>Origin Forge</span>
+      </div>
+
+      <div class="topbar-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#portfolio">Portfolio</a>
+        <a href="../../index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="project-hero panel">
+      <div class="project-hero-copy">
+        <p class="section-kicker">Portfolio Case Study</p>
+
+        <h1>NYC Taxi Demand &amp; Efficiency Dashboard</h1>
+
+        <p class="project-intro">
+          Taxi operations depend on timing, location, trip behavior, and revenue efficiency.
+          This dashboard focuses on the deeper patterns behind NYC taxi activity: when demand
+          peaks, where trips concentrate, and which trip patterns generate the strongest operating value.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../../index.html#contact">Discuss a Similar Project</a>
+          <a class="btn btn-secondary" href="../../index.html#portfolio">Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="project-main">
+
+    <!-- OVERVIEW -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Overview</p>
+        <h2>Project Summary</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          Transportation data becomes valuable when it can explain both demand and efficiency.
+          This project uses NYC taxi trip data to analyze how trip volume, pickup and dropoff
+          zones, time of day, trip distance, duration, and revenue interact across millions of trips.
+        </p>
+
+        <p>
+          The dashboard is built around the operational questions that matter most:
+          where demand is concentrated, when the system is under the most pressure,
+          and how different trip types affect revenue performance.
+        </p>
+
+        <p>
+          Because the dataset is large, the project also includes aggregation and preprocessing
+          work to keep the report responsive while still supporting meaningful filtering,
+          drilldown, and comparison across time and geography.
+        </p>
+      </div>
+    </section>
+
+    <!-- BUSINESS QUESTIONS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Business Problem</p>
+        <h2>Analytics Questions Addressed</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          Demand volume alone does not tell the full story. For transportation analysis,
+          the important questions are how demand behaves, where it concentrates,
+          and whether that activity translates into efficient revenue generation.
+        </p>
+
+        <ul class="project-list">
+          <li>When does taxi demand peak throughout the day?</li>
+          <li>How do weekday and weekend demand patterns differ?</li>
+          <li>Which zones generate the highest pickup and dropoff activity?</li>
+          <li>How do trip duration and distance change throughout the day?</li>
+          <li>Where is revenue generated most efficiently?</li>
+          <li>What role do airport trips play in overall activity and revenue?</li>
+          <li>How concentrated is taxi activity geographically?</li>
+          <li>Which trip categories generate the strongest operational value?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Approach</p>
+        <h2>How The Analysis Was Structured</h2>
+      </div>
+
+      <div class="card-grid project-method-grid">
+
+        <article class="info-card">
+          <h3>Data Preparation &amp; Aggregation</h3>
+          <p>
+            Trip records were aggregated into reporting tables by hour, zone,
+            airport activity, and trip category so the dashboard could handle
+            large-volume analysis without becoming slow or cluttered.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>KPI &amp; Metric Development</h3>
+          <p>
+            Metrics were created for trip volume, revenue, duration, distance,
+            airport activity, and revenue efficiency to compare demand patterns
+            against operating value.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Dashboard Structure</h3>
+          <p>
+            The report is organized around the natural flow of the analysis:
+            overall activity, time-based demand, geographic concentration,
+            and revenue efficiency.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Interactive Analysis</h3>
+          <p>
+            Filtering and report interactions make it possible to explore patterns
+            by time, location, airport activity, and trip category without losing
+            the larger operational picture.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MAIN DASHBOARD -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Main Dashboard</p>
+        <h2>Executive Overview</h2>
+
+        <p class="section-intro">
+          The main view gives a quick read on taxi activity, revenue, trip behavior,
+          and geographic concentration before moving into deeper analysis.
+        </p>
+      </div>
+
+      <figure class="project-figure project-figure-main">
+        <img src="./images/summary.png" alt="Taxi dashboard summary page" />
+      </figure>
+    </section>
+
+    <!-- DEMAND -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Demand Analysis</p>
+        <h2>Time-Based Demand Patterns</h2>
+
+        <p class="section-intro">
+          Demand reporting shows when taxi activity builds, when it peaks,
+          and how trip volume changes across hours, weekdays, weekends,
+          and airport-related traffic.
+        </p>
+      </div>
+
+      <div class="project-image-grid">
+        <figure class="project-figure">
+          <img src="./images/demand.png" alt="Hourly taxi demand dashboard view" />
+          <figcaption>Hourly demand patterns and peak operating periods</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- GEOGRAPHY -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Geographic Analysis</p>
+        <h2>Pickup &amp; Dropoff Distribution</h2>
+
+        <p class="section-intro">
+          Geographic reporting highlights where taxi activity is concentrated
+          and how pickup and dropoff behavior changes across NYC zones.
+        </p>
+      </div>
+
+      <div class="project-image-grid">
+        <figure class="project-figure">
+          <img src="./images/geographic_demand_pickup.png" alt="Pickup demand by taxi zone" />
+          <figcaption>Pickup demand concentration by zone</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="./images/geographic_demand_dropoff.png" alt="Dropoff demand by taxi zone" />
+          <figcaption>Dropoff demand concentration by zone</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- EFFICIENCY -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Efficiency</p>
+        <h2>Revenue &amp; Operational Efficiency</h2>
+
+        <p class="section-intro">
+          Revenue alone does not show efficiency. This view compares revenue
+          against trip duration and distance to show which trip patterns produce
+          stronger operating value.
+        </p>
+      </div>
+
+      <figure class="project-figure">
+        <img src="./images/economics_efficiency.png" alt="Taxi revenue and operational efficiency dashboard view" />
+      </figure>
+    </section>
+
+    <!-- KEY INSIGHTS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Key Insights</p>
+        <h2>Operational Findings</h2>
+      </div>
+
+      <div class="project-copy">
+        <ul class="project-list">
+          <li>
+            Demand peaks in the late afternoon and evening, with 6 PM showing
+            the highest concentration of taxi activity.
+          </li>
+
+          <li>
+            Taxi activity is heavily concentrated in Manhattan zones, showing how much
+            overall trip volume depends on dense geographic demand.
+          </li>
+
+          <li>
+            Trip duration increases during high-demand periods, pointing to congestion
+            pressure during peak operating hours.
+          </li>
+
+          <li>
+            Longer-distance trips generate more total revenue, while shorter trips often
+            perform better when measured by revenue per minute.
+          </li>
+
+          <li>
+            Airport trips represent a smaller share of total trips while contributing
+            a larger share of revenue.
+          </li>
+
+          <li>
+            Demand patterns are more geographically stable than efficiency patterns,
+            which shift more noticeably by time of day.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Tools Used</p>
+        <h2>Technology Stack</h2>
+      </div>
+
+      <div class="card-grid project-tools-grid">
+
+        <article class="info-card">
+          <h3>Power BI</h3>
+          <p>
+            Data modeling, DAX measures, KPI reporting, filtering,
+            dashboard design, and interactive analysis.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Power Query</h3>
+          <p>
+            Data shaping, cleanup workflows, preprocessing,
+            and reporting table preparation.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Python</h3>
+          <p>
+            Aggregation pipelines, preprocessing workflows,
+            and dataset optimization for large-scale reporting.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- OUTCOME -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Outcome</p>
+        <h2>Analytics Scope</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          The project covers the full analytics workflow from raw trip data through
+          preprocessing, aggregation, KPI development, Power BI modeling, and
+          dashboard design.
+        </p>
+
+        <p>
+          The final report gives a clear view of taxi demand, geographic concentration,
+          airport activity, revenue behavior, and operational efficiency across NYC taxi trips.
+        </p>
+
+        <p>
+          This project is intentionally more analytics-heavy than a simple KPI dashboard.
+          It focuses on pattern discovery, operational tradeoffs, and performance behavior
+          across a large, complex transportation dataset.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="../../index.html#contact">Start a Conversation</a>
+        <a class="btn btn-secondary" href="../../index.html#portfolio">Back to Portfolio</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> Origin Forge.
+      Power BI dashboards, reporting, and business analytics.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
