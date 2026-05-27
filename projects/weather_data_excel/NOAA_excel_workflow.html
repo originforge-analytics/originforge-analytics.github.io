@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>NOAA Weather Data Excel Workflow | Origin Forge</title>
+
+  <meta
+    name="description"
+    content="Portfolio case study showing an Excel and Power Query workflow for profiling NOAA weather files, cleaning historical station data, and building an interactive reporting dashboard."
+  />
+
+  <link rel="stylesheet" href="../../css/index.css" />
+</head>
+
+<body>
+  <header class="site-header project-header">
+    <nav class="topbar">
+      <div class="brand-mini">
+        <img src="../../images/BlueHammerAloneTransparent4000X.png" class="brand-mini-logo" alt="Origin Forge symbol" />
+        <span>Origin Forge</span>
+      </div>
+
+      <div class="topbar-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#portfolio">Portfolio</a>
+        <a href="../../index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="project-hero panel">
+      <div class="project-hero-copy">
+        <p class="section-kicker">Portfolio Case Study</p>
+
+        <h1>NOAA Weather Data Excel Workflow</h1>
+
+        <p class="project-intro">
+          This project started with a practical reporting problem: how do you take a folder of historical
+          NOAA weather files, inspect what is actually inside them, clean the useful fields, and turn the
+          result into a reporting workbook that someone can explore without touching the raw data?
+        </p>
+
+        <p class="project-intro">
+          The final workbook combines file profiling, Power Query transformation, station-level filtering,
+          geographic context, and Excel dashboarding. The goal was not just to make charts. The goal was to
+          show the full workflow from messy source files to a usable reporting layer.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../../index.html#contact">Discuss a Similar Project</a>
+          <a class="btn btn-secondary" href="https://youtu.be/UDwdD4somPg" target="_blank" rel="noopener noreferrer">Watch Project Walkthrough</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="project-main">
+
+    <!-- OVERVIEW -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Overview</p>
+        <h2>Project Summary</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          Public datasets are useful, but they rarely arrive in the exact shape needed for analysis.
+          In this project, I worked through a NOAA weather dataset with multiple station files,
+          inconsistent field availability, long historical date ranges, and many columns that were not
+          needed for the final report.
+        </p>
+
+        <p>
+          The finished workbook focuses on a small set of selected stations and precipitation reporting.
+          Behind that simple dashboard is a larger preparation workflow: identifying which files had usable
+          columns, checking value ranges, filtering the dataset down to reporting fields, standardizing dates,
+          and building pivot-based views for monthly, yearly, and semi-annual comparisons.
+        </p>
+
+        <p>
+          I built this as an Excel-centered project on purpose. Many businesses still run important reporting
+          from Excel, and a strong Excel workflow can be extremely valuable when it is structured, documented,
+          and supported by clean transformation logic.
+        </p>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Walkthrough</p>
+        <h2>Video Overview</h2>
+        <p class="section-intro">
+          This project walkthrough shows the workbook structure, the Power Query workflow, and how the
+          dashboard connects back to the prepared NOAA weather data.
+        </p>
+      </div>
+
+      <div class="video-embed">
+        <iframe
+          width="100%"
+          height="420"
+          src="https://www.youtube.com/embed/UDwdD4somPg"
+          title="NOAA Weather Data Analytics Workflow video walkthrough"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://youtu.be/UDwdD4somPg" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+      </div>
+    </section>
+
+    <!-- BUSINESS PROBLEM -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Business Problem</p>
+        <h2>What This Workflow Needed To Solve</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          The real challenge was not making a line chart. The challenge was getting from a folder of raw files
+          to a reliable reporting table while keeping enough visibility into the process to trust the output.
+          That is the kind of work that often sits between analytics, operations, and reporting.
+        </p>
+
+        <ul class="project-list">
+          <li>Which source files contain the fields needed for reporting?</li>
+          <li>Which columns are consistent enough to keep?</li>
+          <li>Are the date fields usable across a long historical range?</li>
+          <li>Can station metadata such as latitude and longitude support map-based context?</li>
+          <li>How can the raw dataset be reduced into a smaller reporting table without losing the important fields?</li>
+          <li>What seasonal and long-term precipitation patterns are visible by station?</li>
+          <li>Can the final workbook remain explainable to someone reviewing it later?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SOURCE PROFILING -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Data Profiling</p>
+        <h2>Understanding The Raw Files Before Building The Report</h2>
+        <p class="section-intro">
+          Before building visuals, I profiled the files to understand their row counts, column counts,
+          available fields, and basic value ranges. This step helped separate useful reporting fields from
+          noise before the data reached the dashboard.
+        </p>
+      </div>
+
+      <div class="project-image-grid">
+        <figure class="project-figure">
+          <img src="./images/File_Profiling.png" alt="Excel file profiling sheet showing file names, row counts, column counts, and available columns" />
+          <figcaption>File-level profiling to compare row counts, column counts, and available fields across source files.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="./images/Column_Profile.png" alt="Excel column profile sheet showing column names, file counts, and source files where each column appears" />
+          <figcaption>Column profiling to identify which fields appeared consistently enough to support reporting.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="./images/Column_Value_Ranges.png" alt="Excel value range profile showing minimum and maximum values for weather-related columns" />
+          <figcaption>Value range checks to spot date ranges, measurement ranges, and fields that needed closer review.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- POWER QUERY -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Power Query Workflow</p>
+        <h2>Turning Many Files Into A Reporting Table</h2>
+        <p class="section-intro">
+          Power Query handled the repeatable transformation work: loading the source files, keeping only the
+          files and columns needed, parsing CSV content, promoting headers, standardizing dates, adding calendar
+          fields, and applying final data types.
+        </p>
+      </div>
+
+      <figure class="project-figure project-figure-main">
+        <img src="./images/Power_QueryFlow.png" alt="Power Query editor showing transformation steps for the Mini WeatherData query" />
+        <figcaption>
+          The query steps show the workflow from source intake through date parsing, month and year extraction,
+          and final type cleanup.
+        </figcaption>
+      </figure>
+
+      <div class="project-copy">
+        <p>
+          This is one of the most important parts of the project because it shows the reporting layer was not
+          assembled manually. The workbook has a repeatable cleanup path, which is what makes the final dashboard
+          more useful than a one-off spreadsheet.
+        </p>
+      </div>
+    </section>
+
+    <!-- PREPARED DATA -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Prepared Dataset</p>
+        <h2>A Smaller, Cleaner Dataset Built For Analysis</h2>
+        <p class="section-intro">
+          After the source files were reduced and transformed, the reporting table included the key station,
+          date, location, and precipitation fields needed for the workbook.
+        </p>
+      </div>
+
+      <figure class="project-figure project-figure-main">
+        <img src="./images/5_Station_dataset.png" alt="Prepared Excel table with station, date, latitude, longitude, elevation, station name, precipitation, year, month number, month, and date fields" />
+        <figcaption>
+          Prepared station-level weather data with standardized date fields and reporting-friendly calendar columns.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- GEOGRAPHY -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Location Context</p>
+        <h2>Adding Geographic Context To The Station Data</h2>
+        <p class="section-intro">
+          The station latitude and longitude fields were used to show where the selected weather stations are
+          located. This gives the report more context than a table of station names alone.
+        </p>
+      </div>
+
+      <figure class="project-figure project-figure-main">
+        <img src="./images/Lat_Long_Sheet.png" alt="Excel sheet showing station locations, latitude and longitude values, and a map of weather station points across the United States" />
+        <figcaption>
+          Station location table and map view showing the geographic spread of the selected reporting stations.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Dashboard</p>
+        <h2>Historical Weather Reporting Dashboard</h2>
+        <p class="section-intro">
+          The final dashboard brings together monthly patterns, long-term station trends, map context, and
+          semi-annual comparison views into a single reporting page.
+        </p>
+      </div>
+
+      <figure class="project-figure project-figure-main">
+        <img src="./images/main_dashboard.png" alt="Historical weather reporting dashboard showing monthly precipitation, historical precipitation trends, station map, and semi-annual trend chart" />
+        <figcaption>
+          Final Excel dashboard combining pivot charts, station filtering, a timeline, location context, and precipitation trends.
+        </figcaption>
+      </figure>
+
+      <div class="project-copy">
+        <p>
+          This view gives a reviewer several ways to view the data:
+          seasonal behavior by month, long-term annual movement by station, station geography, and selected
+          semi-annual comparisons.
+        </p>
+      </div>
+    </section>
+
+    <!-- ANALYSIS VIEWS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Analysis Views</p>
+        <h2>Pivot-Based Views Used To Build The Story</h2>
+        <p class="section-intro">
+          The supporting worksheet views show the analysis behind the dashboard. They are intermediate views which feed into the 
+          main report page and are used to validate it. 
+        </p>
+      </div>
+
+      <div class="project-image-grid">
+        <figure class="project-figure">
+          <img src="./images/Yearly_Data.png" alt="Excel pivot table and line chart showing average precipitation by year and station" />
+          <figcaption> The yearly station trend view compares precipitation behavior across the selected stations.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="./images/Yearly_Average.png" alt="Excel pivot table and chart showing average precipitation by month and station" />
+          <figcaption>The monthly average view shows how precipitation patterns differ by station throughout the year.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="./images/Semi_Annual_Data.png" alt="Excel pivot table and chart comparing June and December precipitation over time" />
+          <figcaption> The semi-annual comparison view focused on how rainfall differs bi-annually across the historical date range.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- DESIGN DECISIONS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Design Decisions</p>
+        <h2>Why The Workbook Was Structured This Way</h2>
+      </div>
+
+      <div class="card-grid project-method-grid">
+        <article class="info-card">
+          <h3>Profile Before Reporting</h3>
+          <p>
+            The file and column profiling sheets made the dataset easier to reason about before building visuals.
+            This reduced guesswork and helped identify which fields were stable enough to use.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Keep The Final Dataset Narrow</h3>
+          <p>
+            The reporting table was intentionally reduced to the fields needed for analysis during preprocessing. 
+            Station identity, date fields, location fields, and precipitation values were identified as stable fields across the specified
+            reports imported by the dataset.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Use Excel Strengths</h3>
+          <p>
+            Pivot tables, slicers, timelines, charts, and maps were used where they made sense instead of forcing
+            every step into a heavier BI platform.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Show The Workflow</h3>
+          <p>
+            The workbook includes visible preparation and analysis layers so the final dashboard is easier to audit,
+            explain, and improve later.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- KEY INSIGHTS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Key Takeaways</p>
+        <h2>What This Project Demonstrates</h2>
+      </div>
+
+      <div class="project-copy">
+        <ul class="project-list">
+          <li>
+            Raw public datasets often need a profiling step before they are safe to use in a dashboard.
+          </li>
+
+          <li>
+            Power Query can turn a folder-based data source into a repeatable reporting workflow instead of a
+            process requiring extensive manual pre-transformation.
+          </li>
+
+          <li>
+            Excel can still be a strong reporting tool when the workbook is structured around clean source data,
+            pivot-based analysis, and clear dashboard sections.
+          </li>
+
+          <li>
+            Location metadata added useful context and helped make the station comparison easier to understand.
+          </li>
+
+          <li>
+            The project shows both technical cleanup work and business-facing reporting, which is the combination
+            many real reporting projects require.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Tools Used</p>
+        <h2>Technology Stack</h2>
+      </div>
+
+      <div class="card-grid project-tools-grid">
+        <article class="info-card">
+          <h3>Excel</h3>
+          <p>
+            Pivot tables, pivot charts, slicers, timelines, map visuals, workbook organization,
+            and dashboard presentation.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Power Query</h3>
+          <p>
+            Folder ingestion, CSV parsing, column selection, date parsing, calendar fields,
+            filtering, cleanup, and final data typing.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Data Profiling</h3>
+          <p>
+            File-level review, column availability checks, value range checks, and source structure analysis
+            before dashboard development.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- OUTCOME -->
+    <section class="panel">
+      <div class="section-heading">
+        <p class="section-kicker">Outcome</p>
+        <h2>Reporting Scope</h2>
+      </div>
+
+      <div class="project-copy">
+        <p>
+          The final workbook demonstrates a full Excel reporting workflow. This includes source file review, data profiling,
+          Power Query transformation, prepared reporting tables, geographic context, pivot analysis, and dashboard design.
+        </p>
+
+        <p>
+          This kind of workflow is useful when a team needs more than a chart but does not necessarily need a full
+          application. It creates a clear bridge between raw files and repeatable reporting, while keeping the logic
+          visible enough for review and future improvement.
+        </p>
+
+        <p>
+          The project also shows the type of practical reporting work I focus on. Take messy data, make it 
+          understandable, and turn it into a dashboard or workbook that supports better analysis.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="../../index.html#contact">Start a Conversation</a>
+        <a class="btn btn-secondary" href="../../index.html#portfolio">Back to Portfolio</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> Origin Forge.
+      Power BI dashboards, reporting, and business analytics.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
